@@ -1,0 +1,343 @@
+<html><head><base href="https://www.learnpython.org/"><style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #4B79A1, #283E51);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(90deg, #283E51, #4B79A1);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: headerAnimation 2s infinite alternate;
+}
+
+@keyframes headerAnimation {
+  0% {
+    transform: translateX(-5%) rotate(-2deg);
+  }
+  100% {
+    transform: translateX(5%) rotate(2deg);
+  }
+}
+
+nav {
+  background: linear-gradient(90deg, #4B79A1, #283E51);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+nav a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 50%);
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover:before {
+  width: 200%;
+  height: 200%;
+}
+
+nav a:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  position: relative;
+  z-index: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+section {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, h2 {
+  color: #283E51;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto Mono', monospace;
+  position: relative;
+}
+
+h1:before, h2:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 5px;
+  background: linear-gradient(90deg, #4B79A1, #283E51);
+  animation: underlineAnimation 2s infinite alternate;
+}
+
+@keyframes underlineAnimation {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(90deg, #f5f5f5, #e0e0e0);
+  padding: 2px 4px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  color: #333;
+  position: relative;
+}
+
+code:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(75, 121, 161, 0.2), transparent 50%);
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+code:hover:before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+code:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+pre {
+  background: linear-gradient(90deg, #f5f5f5, #e0e0e0);
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Roboto Mono', monospace;
+}
+
+pre:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(75, 121, 161, 0.2), transparent 50%);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+pre:hover:before {
+  opacity: 1;
+}
+
+pre:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background: linear-gradient(90deg, #283E51, #4B79A1);
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+footer p {
+  font-size: 18px;
+  animation: footerAnimation 3s infinite alternate;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+footer p:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 50%);
+  border-radius: 50%;
+  animation: pulseAnimation 2s infinite alternate;
+}
+
+@keyframes footerAnimation {
+  0% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(5%);
+  }
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: translateX(-50%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.5);
+    opacity: 1;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>Learn Python</h1>
+</header>
+
+<nav>
+  <a href="#intro">Introduction</a>
+  <a href="#basics">Python Basics</a>
+  <a href="#data-structures">Data Structures</a>
+  <a href="#object-oriented">Object-Oriented Programming</a>
+  <a href="#modules">Modules and Packages</a>
+  <a href="#web-dev">Web Development</a>
+  <a href="#data-analysis">Data Analysis</a>
+  <a href="#resources">Resources</a>
+</nav>
+
+<main>
+  <section id="intro">
+    <h2>Introduction</h2>
+    <p>Welcome to Learn Python, an interactive learning platform designed to help you master the Python programming language. Whether you're a complete beginner or have some experience with coding, this website will guide you through the essentials of Python in an engaging and hands-on manner.</p>
+  </section>
+
+  <section id="basics">
+    <h2>Python Basics</h2>
+    <p>Start your journey by exploring the fundamentals of Python. Learn about variables, data types, operators, and control flow statements. Understand the syntax and structure of Python code through interactive examples and exercises.</p>
+    <a href="https://www.learnpython.org/basics/">Explore Python Basics &raquo;</a>
+  </section>
+
+  <section id="data-structures">
+    <h2>Data Structures</h2>
+    <p>Discover the power of data structures in Python, including lists, tuples, dictionaries, and sets. Learn how to manipulate and work with these structures efficiently, enabling you to organize and manage data effectively.</p>
+    <a href="https://www.learnpython.org/data-structures/">Dive into Data Structures &raquo;</a>
+  </section>
+
+  <section id="object-oriented">
+    <h2>Object-Oriented Programming</h2>
+    <p>Explore the principles of object-oriented programming (OOP) in Python. Understand classes, objects, inheritance, and polymorphism. Learn how to design and implement reusable, modular, and scalable code using OOP concepts.</p>
+    <a href="https://www.learnpython.org/object-oriented/">Discover Object-Oriented Programming &raquo;</a>
+  </section>
+
+  <section id="modules">
+    <h2>Modules and Packages</h2>
+    <p>Leverage the extensive collection of built-in and third-party modules and packages in Python. Learn how to import and utilize these modules to extend the functionality of your Python programs and streamline your development process.</p>
+    <a href="https://www.learnpython.org/modules/">Explore Modules and Packages &raquo;</a>
+  </section>
+
+  <section id="web-dev">
+    <h2>Web Development with Python</h2>
+    <p>Dive into web development using Python frameworks like Django and Flask. Learn how to build dynamic and feature-rich web applications, handle HTTP requests and responses, and interact with databases.</p>
+    <a href="https://www.learnpython.org/web-dev/">Unleash Web Development with Python &raquo;</a>
+  </section>
+
+  <section id="data-analysis">
+    <h2>Data Analysis with Python</h2>
+    <p>Discover the powerful data analysis capabilities of Python. Explore libraries like NumPy, Pandas, and Matplotlib. Learn to perform data manipulation, visualization, and analysis to gain valuable insights from your data.</p>
+    <a href="https://www.learnpython.org/data-analysis/">Uncover Data Analysis with Python &raquo;</a>
+  </section>
+
+  <section id="resources">
+    <h2>Resources</h2>
+    <p>Expand your knowledge with additional resources, including tutorials, books, online courses, and community forums. Stay up-to-date with the latest developments in the Python ecosystem.</p>
+    <ul>
+      <li><a href="https://www.python.org/doc/" target="_blank">Official Python Documentation</a></li>
+      <li><a href="https://www.codecademy.com/learn/learn-python" target="_blank">Codecademy Python Course</a></li>
+      <li><a href="https://automatetheboringstuff.com/" target="_blank">"Automate the Boring Stuff with Python" Book</a></li>
+      <li><a href="https://www.reddit.com/r/Python/" target="_blank">Python Subreddit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; Learn Python</p>
+</footer>
+
+</body>
+</html>
